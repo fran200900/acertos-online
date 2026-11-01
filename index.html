@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Acertos Online - Aqui está a melhor cotação do mercado</title>
+
+  <meta name="description" content="A Acertos Online oficial é confiável para apostas esportivas e jogos online. Cadastre-se na Acertos Online e acompanhe resultados em tempo real.">
+  <meta name="keywords" content="Acertos Club, acertos.club, acertos bets, acertos online, jogos online, apostas e resultados">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://superbancas.com.br/">
+  <link rel="alternate" hreflang="pt-BR" href="https://superbancas.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Acertos Online - Melhor Cotação do Mercado">
+  <meta property="og:description" content="Acesse a plataforma Acertos Online.">
+  <meta property="og:url" content="https://superbancas.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://superbancas.com.br/superbancas.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Acertos Online">
+
+  <!-- Favicon -->
+  <link rel="icon" href="acertostela.png" type="image/png">
+  <link rel="apple-touch-icon" href="acertostela.png">
+  <link rel="shortcut icon" href="acertostela.png" type="image/png">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://app.acertos.online" crossorigin>
+
+  <!-- Preload da imagem do banner -->
+  <link rel="preload" as="image" href="acertos.png" fetchpriority="high">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70QZPPYYF7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-70QZPPYYF7');
+  </script>
+
+  <style>
+    :root {
+      --primary: #25D366;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Roboto', system-ui, sans-serif;
+      background: #f4f6f8;
+      color: #1a1a1a;
+      overflow: hidden;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    /* BANNER EM TELA CHEIA */
+    #banner-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background: rgba(0, 0, 0, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #banner-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .banner-container {
+      position: relative;
+      max-width: 95vw;
+      max-height: 90vh;
+      max-height: 90dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Link clicável do banner */
+    .banner-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      max-height: 90vh;
+      max-height: 90dvh;
+      cursor: pointer;
+    }
+
+    #promo-banner {
+      display: block;
+      max-width: 100%;
+      max-height: 85vh;
+      max-height: 85dvh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+      cursor: pointer;
+    }
+
+    /* Botão para fechar o banner */
+    .close-banner-btn {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #ff0000;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      z-index: 10001;
+      transition: transform 0.3s ease, background 0.3s ease;
+      user-select: none;
+    }
+
+    .close-banner-btn:hover {
+      transform: scale(1.1);
+      background: #cc0000;
+    }
+
+    /* Conteúdo principal */
+    .section {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      position: relative;
+    }
+
+    .iframe-placeholder {
+      position: absolute;
+      inset: 0;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      z-index: 2;
+      transition: opacity 0.4s ease;
+    }
+
+    .iframe-placeholder.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #main-iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: 1;
+    }
+
+    /* Botão WhatsApp */
+    .fab-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .fab-main {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .fab-main:hover {
+      transform: scale(1.05);
+    }
+
+    .whatsapp-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      #banner-overlay {
+        padding: 15px;
+      }
+
+      .banner-container {
+        max-width: 92vw;
+      }
+
+      #promo-banner {
+        max-width: 92vw;
+        max-height: 80vh;
+        max-height: 80dvh;
+      }
+
+      .close-banner-btn {
+        width: 40px;
+        height: 40px;
+        top: -12px;
+        right: -12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BANNER DE ABERTURA -->
+  <div id="banner-overlay" role="dialog" aria-label="Banner promocional">
+
+    <div class="banner-container">
+
+      <!-- O X fecha o banner sem abrir o link -->
+      <button
+        type="button"
+        class="close-banner-btn"
+        id="close-banner"
+        title="Fechar banner"
+        aria-label="Fechar banner"
+      >×</button>
+
+      <!-- Ao clicar na imagem, abre o link desejado -->
+      <a
+        class="banner-link"
+        id="banner-link"
+        href="https://app.acertos.club/pr/CRTgB0ZV"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Acessar Acertos Online"
+      >
+        <img
+          id="promo-banner"
+          src="acertos.png"
+          alt="Acertos Online - Clique para acessar a plataforma"
+          fetchpriority="high"
+        >
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <div class="section">
+
+      <!-- Indicador de carregamento -->
+      <div id="placeholder" class="iframe-placeholder">
+        <div class="spinner"></div>
+        <div>Carregando SuperBancas...</div>
+      </div>
+
+      <!-- Plataforma incorporada -->
+      <iframe
+        id="main-iframe"
+        src="https://app.acertos.online/pr/JcsF2PpU"
+        fetchpriority="high"
+        referrerpolicy="no-referrer-when-downgrade"
+        allow="clipboard-read; clipboard-write; fullscreen; autoplay; encrypted-media"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-clipboard-read allow-clipboard-write"
+        title="Plataforma SuperBancas"
+      ></iframe>
+
+    </div>
+  </main>
+
+  <!-- BOTÃO WHATSAPP -->
+  <div class="fab-container">
+    <a
+      href="https://wa.me/5518982043426?text=Ol%C3%A1%20suporte%2C%20vim%20pelo%20site%20e%20preciso%20de%20ajuda"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fab-main"
+      aria-label="Falar com suporte no WhatsApp"
+    >
+      <svg
+        class="whatsapp-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.15 1.59 5.96L0 24l6.25-1.64a11.9 11.9 0 0 0 5.8 1.49h.01C18.65 23.85 24 18.49 24 11.9a11.85 11.85 0 0 0-3.48-8.42ZM12.06 21.8a9.88 9.88 0 0 1-5.03-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.82 9.82 0 0 1-1.51-5.25c0-5.44 4.43-9.87 9.88-9.87a9.8 9.8 0 0 1 6.98 2.9 9.8 9.8 0 0 1 2.89 6.99c0 5.45-4.43 9.83-9.9 9.83Zm5.42-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+      </svg>
+      <span>Suporte</span>
+    </a>
+  </div>
+
+  <script>
+    const bannerOverlay = document.getElementById('banner-overlay');
+    const closeBtn = document.getElementById('close-banner');
+    const iframe = document.getElementById('main-iframe');
+    const placeholder = document.getElementById('placeholder');
+
+    // Fechar o banner
+    function closeBanner() {
+      bannerOverlay.classList.add('hidden');
+
+      setTimeout(() => {
+        bannerOverlay.style.display = 'none';
+      }, 550);
+    }
+
+    // O botão X fecha o banner
+    closeBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeBanner();
+    });
+
+    // Fechar com a tecla ESC
+    document.addEventListener('keydown', function (event) {
+      if (
+        event.key === 'Escape' &&
+        bannerOverlay.style.display !== 'none'
+      ) {
+        closeBanner();
+      }
+    });
+
+    // O clique na imagem abre o link em nova aba.
+    // O comportamento é realizado diretamente pelo link HTML.
+
+    // Quando a plataforma carregar, esconder o indicador
+    iframe.addEventListener('load', function () {
+      placeholder.classList.add('hidden');
+
+      setTimeout(() => {
+        placeholder.style.display = 'none';
+      }, 400);
+    });
+
+    // Fallback: esconder o indicador após 8 segundos
+    setTimeout(function () {
+      if (!placeholder.classList.contains('hidden')) {
+        placeholder.classList.add('hidden');
+
+        setTimeout(() => {
+          placeholder.style.display = 'none';
+        }, 400);
+      }
+    }, 8000);
+  </script>
+
+</body>
+</html>
